@@ -1,6 +1,6 @@
 import React from 'react';
-import MenImage from '../../images/image-hero-desktop.png';
-import MeImageMobile from '../../images/me_pc.jpg';
+import DanielImage from '../../images/danielimage.jpg';
+import MeImageBanner from '../../images/me_pc.jpg';
 import { ReactComponent as Databiz } from '../../images/client-databiz.svg';
 import { ReactComponent as Audiophile } from '../../images/client-audiophile.svg';
 import { ReactComponent as Meet } from '../../images/client-meet.svg';
@@ -25,13 +25,13 @@ export const MainSection = () => {
         <a href="#" className="group relative block bg-black">
   <img
     alt=""
-    src={MeImageMobile}
+    src={MeImageBanner}
     className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
   />
   <div className="relative p-4 sm:p-6 lg:p-8">
     <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Web Developer</p>
 
-    <p className="text-xl font-bold text-white sm:text-2xl">Chris Ellis-Tatti</p>
+    <p className="text-xl font-bold text-white sm:text-2xl">Christopher Ellis-Tatti</p>
 
     <p className="text-xs xl:text-lg font-medium text-white">2 years experience</p>
 
@@ -51,15 +51,15 @@ export const MainSection = () => {
 <a href="#" className="group relative block bg-black">
   <img
     alt=""
-    src={MeImageMobile}
+    src={DanielImage}
     className="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
   />
   <div className="relative p-4 sm:p-6 lg:p-8">
-    <p className="text-sm font-medium uppercase tracking-widest text-pink-500">Web Developer</p>
+    <p className="text-sm font-medium uppercase tracking-widest text-pink-500 shadow-sm">Graphic Designer</p>
 
-    <p className="text-xl font-bold text-white sm:text-2xl">Chris Ellis-Tatti</p>
+    <p className="text-xl font-bold text-white sm:text-2xl shadow-sm">Daniel Coza</p>
 
-    <p className="text-xs xl:text-lg font-medium text-white sm:text-2xl">2 years experience</p>
+    <p className="text-xs xl:text-lg font-medium text-white sm:text-2xl">5 years experience</p>
 
     <div className="mt-32 sm:mt-48 lg:mt-64">
       <div
