@@ -8,7 +8,7 @@ export const Button = ({
     isFilled = false
 }) => {
   return (
-    <button className={`text-medium-grey px-5 py-2 hover:text-almost-black 
+    <button className={`text-medium-grey px-5 py-2 hover:text-almost-black text-lg tracking-wide
       ${ hasBorder && borderStyles} 
       ${ isFilled && filledStyles }`}>
         { children }

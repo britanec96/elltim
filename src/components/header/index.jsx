@@ -13,7 +13,7 @@ export const Header = () => {
   return (
     <header className='flex items-center'>
       <img className='flex w-10 mb-1 cursor-pointer' src={LogoIcon} alt="Logo" />
-      <h1 className='flex ml-2 font-medium text-lg antialiased cursor-pointer tracking-widest'><span className='text-pink-500 font-black'>ELL</span>Tim</h1>
+      <h1 className='flex ml-2 font-medium text-lg antialiased cursor-pointer tracking-widest'><span className='text-blue-500 font-black'>ELL</span>Tim</h1>
       <nav className='hidden xl:flex space-x-6 ml-8 items-center'>
         <NavItem text='Feature'>
             <NavMenu items={ FEATURES }/>
