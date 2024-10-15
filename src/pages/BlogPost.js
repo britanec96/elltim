@@ -14,7 +14,7 @@ const BlogPost = ({ post, onBack, onLike }) => {
         <div className="bg-white p-8 rounded-lg shadow-lg">
           <h1 className="text-4xl font-bold mb-4">
             {post.title.split(' ').map((word, i) => 
-              i === 1 ? <span key={i} className="text-sky-500">{word}</span> : ` ${word}`
+              i === 1 ? <span key={i} className="text-sky-600">{word}</span> : ` ${word}`
             )}
           </h1>
           <img className="w-full h-64 object-cover rounded-lg mb-6" src={post.image} alt={post.title} />

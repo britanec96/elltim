@@ -2,7 +2,6 @@
 export const FEATURES = [
     { text: 'Testimonials', icon: <i className="ri-feedback-line"></i>, to: '/testimonials' },
     { text: 'Portfolio', icon: <i className="ri-artboard-line"></i>, to: '/portfolio' },
-    { text: 'Blog', icon: <i className="ri-article-line"></i>, to: '/blog' },
     { text: 'Contact Us', icon: <i className="ri-contacts-book-2-line"></i>, to: '/contact' },
     { text: 'Pricing', icon: <i className="ri-money-pound-box-line"></i>, to: '/pricing' }
 ];

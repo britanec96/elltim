@@ -35,7 +35,7 @@ function ServiceOrderForm() {
         onSubmit={handleSubmit}
         className="border-4 border-sky-700 p-6 rounded-xl space-y-4 w-full"
       >
-        <h1 className="text-5xl font-bold text-center mb-4 text-almost-white">Send <span className="text-sky-500">Us</span> a Request, and We Chat to You Back Later</h1>
+        <h1 className="text-5xl font-bold text-center mb-4 text-almost-white">Send <span className="text-sky-600">Us</span> a Request, and We Chat to You Back Later</h1>
 
         {/* Выбор услуги */}
         <div>
@@ -122,7 +122,7 @@ function ServiceOrderForm() {
                 after:-translate-y-1/2 after:w-[10px] after:h-[10px] after:bg-sky-600 after:rounded-[2px] 
                 after:opacity-0 peer-checked:after:opacity-100"
             ></span>
-            <p className="inline-flex text-almost-white ml-4">I agree to the &nbsp; <a className="text-sky-500 underline cursor-pointer">terms</a> &nbsp; of personal data processing (Your data is protected)</p>
+            <p className="inline-flex text-almost-white ml-4">I agree to the &nbsp; <a className="text-sky-600 underline cursor-pointer">terms</a> &nbsp; of personal data processing (Your data is protected)</p>
           </label>
         </div>
 

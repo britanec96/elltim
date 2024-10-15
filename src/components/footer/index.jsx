@@ -20,13 +20,13 @@ export const Footer = () => {
             </p>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link to="/about" className="hover:text-sky-500">About Us</Link>
+                <Link to="/about" className="hover:text-sky-600">About Us</Link>
               </li>
               <li>
-                <Link to="/portfolio" className="hover:text-sky-500">Portfolio</Link>
+                <Link to="/portfolio" className="hover:text-sky-600">Portfolio</Link>
               </li>
               <li>
-                <Link to="/blog" className="hover:text-sky-500">Blog</Link>
+                <Link to="/blog" className="hover:text-sky-600">Blog</Link>
               </li>
             </ul>
           </div>
@@ -35,19 +35,19 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/webdev" className="hover:text-sky-500">Web Development</Link>
+                <Link to="/webdev" className="hover:text-sky-600">Web Development</Link>
               </li>
               <li>
-                <Link to="/graphic-design" className="hover:text-sky-500">Graphic Design</Link>
+                <Link to="/graphic-design" className="hover:text-sky-600">Graphic Design</Link>
               </li>
               <li>
-                <Link to="/digital-marketing" className="hover:text-sky-500">Digital Marketing</Link>
+                <Link to="/digital-marketing" className="hover:text-sky-600">Digital Marketing</Link>
               </li>
               <li>
-                <Link to="/app-development" className="hover:text-sky-500">Mobile App Development</Link>
+                <Link to="/app-development" className="hover:text-sky-600">Mobile App Development</Link>
               </li>
               <li>
-                <Link to="/content-creation" className="hover:text-sky-500">Content Creation</Link>
+                <Link to="/content-creation" className="hover:text-sky-600">Content Creation</Link>
               </li>
             </ul>
           </div>
@@ -59,9 +59,9 @@ export const Footer = () => {
               Have any questions? Reach out to us and we'll be happy to assist you.
             </p>
             <ul className="space-y-2">
-              <li className="hover:text-sky-500">Email: </li>
-              <li className="hover:text-sky-500">Whats'up/Telegram: </li>
-              <li className="hover:text-sky-500">Address:  Manchester, UK</li>
+              <li className="hover:text-sky-600">Email: </li>
+              <li className="hover:text-sky-600">Whats'up/Telegram: </li>
+              <li className="hover:text-sky-600">Address:  Manchester, UK</li>
             </ul>
           </div>
         </div>

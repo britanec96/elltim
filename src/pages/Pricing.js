@@ -65,7 +65,7 @@ const Pricing = () => {
     <div className="bg-gray-200 py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8">
-          Price <span className="text-sky-500">List</span>
+          Price <span className="text-sky-600">List</span>
         </h1>
         <p className="text-center text-lg text-gray-600 mb-8">
           Affordable and transparent pricing for our services. Choose the plan that best fits your needs.
@@ -81,7 +81,7 @@ const Pricing = () => {
     />
   )}
   <h2 className="text-2xl font-semibold mb-4 bg-sky-500 rounded-lg p-2 text-center text-almost-white">{service.title}</h2>
-  <p className="text-3xl font-bold text-sky-500 mb-4">{service.price}</p>
+  <p className="text-3xl font-bold text-sky-600 mb-4">{service.price}</p>
   <p className="text-gray-600 mb-4">{service.description}</p>
   <button
     className="w-56 h-16 border-2 text-sky-600 p-3 rounded-lg font-medium text-xl hover:text-almost-white hover:bg-sky-500 transition-colors duration-200"

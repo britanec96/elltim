@@ -2,16 +2,27 @@ import React, { useState, useEffect } from 'react';
 import ItIcon2 from '../../images/ItIcon2.png';
 import { Wrapper } from '../wrapper';
 import OrderFormModal from '../modal-order-form';
+import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
 
 export const PromoBlockHome = () => {
+  const sr = useScrollReveal();
+
+  useEffect(() => {
+    sr.reveal('.reveal', {
+        delay: 2000,
+        distance: '30px', // Пример добавления других параметров
+        duration: 800,
+        easing: 'ease-in-out',
+    });
+  }, [sr]);
+
   const [isOpen, setIsOpen] = useState(false);
 
-  // Открытие или закрытие модального окна
+
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
 
-  // Закрытие модального окна при клике вне его
   useEffect(() => {
     if (isOpen) {
       const handleOutsideClick = (event) => {
@@ -27,7 +38,7 @@ export const PromoBlockHome = () => {
   }, [isOpen]);
 
   return (
-    <section className="bg-white w-full">
+    <section className="bg-white w-full reveal">
       <div className="overflow-hidden text-center xl:text-left items-center">
         <Wrapper>
           <div className="flex flex-col xl:flex-row items-center xl:justify-between xl:max-h-[40rem]">
@@ -41,33 +52,35 @@ export const PromoBlockHome = () => {
               </h1>
               <div className="w-full mt-12 mb-7 text-2xl">
                 <div className="xl:flex xl:items-start items-center gap-2">
-                  <span className="text-sky-500 max-xl:hidden">—</span>
+                  <span className="text-sky-600 max-xl:hidden">—</span>
                   <p>
                     Experienced professionals with at least 5 years of experience
                   </p>
                 </div>
                 <div className="xl:flex xl:items-start items-center gap-2 mt-5">
-                  <span className="text-sky-500 max-xl:hidden">—</span>
+                  <span className="text-sky-600 max-xl:hidden">—</span>
                   <p>The lowest prices on the market</p>
                 </div>
                 <div className="xl:flex xl:items-start items-center gap-2 mt-5">
-                  <span className="text-sky-500 max-xl:hidden">—</span>
+                  <span className="text-sky-600 max-xl:hidden">—</span>
                   <p>Extensive experience in solving problems</p>
                 </div>
               </div>
 
-              {/* Кнопка для открытия модального окна */}
+
               <div className="xl:block mt-8">
-                <button
-                  onClick={toggleModal}
-                  className="w-56 h-16 mt-2 ml-4 border-2 text-sky-600 p-3 rounded-lg font-medium text-xl hover:text-almost-white hover:bg-sky-500 transition-colors duration-200"
-                >
-                  Get advice
-                </button>
+              <button
+  onClick={toggleModal}
+  className="w-56 h-16 mt-2 ml-4 border-2 text-sky-600 p-3 rounded-lg font-medium text-xl hover:text-almost-white hover:bg-sky-500 hover:bg-opacity-100 transition-colors duration-200"
+>
+  Get advice
+</button>
+
+
               </div>
             </div>
 
-            {/* Изображение */}
+
             <div className="w-full xl:w-1/2 flex justify-center relative">
           <img
             className="w-1/2 xl:w-full md:mt-10 sm:mt-10 object-cover transition-all duration-500 ease-in-out relative transform -scale-x-100"
@@ -86,7 +99,6 @@ export const PromoBlockHome = () => {
       </div>
     </Wrapper>
 
-        {/* Модальное окно */}
         {isOpen && (
           <div
             id="modal-background"

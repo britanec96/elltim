@@ -32,7 +32,7 @@ const About = () => {
     <div className="bg-gray-100 py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8">
-          About <span className="text-sky-500">Us</span>
+          About <span className="text-sky-600">Us</span>
         </h1>
         <p className="text-center text-lg text-gray-600 mb-8">
           We are a dedicated team committed to delivering high-quality services that empower businesses and individuals.

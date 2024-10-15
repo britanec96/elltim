@@ -127,7 +127,7 @@ const Blog = () => {
     <div className="bg-gray-200 py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8">
-          Our <span className="text-sky-500">Blog</span>
+          Our <span className="text-sky-600">Blog</span>
         </h1>
         <div className="grid gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           {posts.map((post) => (

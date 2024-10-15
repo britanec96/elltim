@@ -11,7 +11,7 @@ const WebDev = () => {
     <div className="bg-gray-200 py-12">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8">
-          Web <span className="text-sky-500">Development</span>
+          Web <span className="text-sky-600">Development</span>
         </h1>
 
         {/* Section 1: What is Web Development */}
@@ -25,7 +25,7 @@ const WebDev = () => {
           <img src="https://www.elegantthemes.com/blog/wp-content/uploads/2018/12/top11.png" alt="Web Development" className="w-full h-72 object-cover rounded-lg mb-6" />
         </div>
 
-        <i className="ri-arrow-down-line flex justify-center text-8xl text-sky-500 text-center mb-8"></i>
+        <i className="ri-arrow-down-line flex justify-center text-8xl text-sky-600 text-center mb-8"></i>
 
         {/* Section 2: Why is it Important */}
         <div className="mb-8 p-7 rounded-lg bg-white">
@@ -38,7 +38,7 @@ const WebDev = () => {
           <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221222184908/web-development1.png" alt="Importance of Web Development" className="w-full h-72 object-cover rounded-lg mb-6" />
         </div>
 
-        <i className="ri-arrow-down-line flex justify-center text-8xl text-sky-500 text-center mb-8"></i>
+        <i className="ri-arrow-down-line flex justify-center text-8xl text-sky-600 text-center mb-8"></i>
 
         {/* Section 3: The Web Development Process */}
         <div className="mb-8 p-7 rounded-lg bg-white">
@@ -53,7 +53,7 @@ const WebDev = () => {
           </ol>
         </div>
 
-        <i className="ri-arrow-down-line flex justify-center text-8xl text-sky-500 text-center mb-8"></i>
+        <i className="ri-arrow-down-line flex justify-center text-8xl text-sky-600 text-center mb-8"></i>
 
         {/* Section 4: Payment Process */}
         <div className="mb-8 p-5 rounded-lg bg-white">

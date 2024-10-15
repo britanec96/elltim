@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { PromoBlockHome } from '../promo-block-home';
 import { Wrapper } from '../wrapper';
 import ServiceOrderFormShort from '../order-form-short';
 import Carousel from '../carousel';
-import One from '../../images/One.png';
-import Two from '../../images/two.png';
-import Three from '../../images/three.png';
-import Four from '../../images/Four.png';
-import Five from '../../images/five.png';
-import Six from '../../images/Six.png';
-import Bear from '../../images/Bear.png';
-import CarouselSection from '../main-section-part';
+import HomeBlockOne from '../home-block-one';
+import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
 
 export const MainSection = () => {
+  const sr = useScrollReveal();
+
+  useEffect(() => {
+    sr.reveal('.reveal', {
+      delay: 400,
+    });
+  }, [sr]);
   return (
     <>
 <div className="relative w-full overflow-hidden h-11 bg-yellow-400 flex items-center">
@@ -22,118 +23,17 @@ export const MainSection = () => {
 </div>
     <PromoBlockHome/>
     <Wrapper>
-    <section>
+    <section className='reveal'>
     <div className="text-center mb-12">
         <h2 className="text-4xl md:text-7xl font-bold text-gray-900 mt-14">
         Design, Programming, and Solutions
         </h2>
-        <h1 className="text-4xl md:text-5xl mt-5 font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+        <h1 className="text-4xl md:text-5xl mt-5 font-bold text-sky-600">
         For All Your Needs at The Lowest Prices:
         </h1>
       </div>
     <Carousel/>
-    <CarouselSection/>
-    <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 pt-8">
-      <div>
-      <h1 className="relative text-almost-black font-black md:text-4xl sm:text-3xl mb-8 text-center tracking-wide">
-  120+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-500">successfully</span> completed orders
-  <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 h-1 bg-sky-500 rounded-lg transition-all duration-300 scale-x-0 hover:scale-x-100 origin-center"></span>
-</h1>
-
-    <div className="rounded-lg bg-white flex items-center justify-center text-center overflow-hidden relative h-80 bg-cover bg-center" style={{ backgroundImage: `url(${One})` }}>
-  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-    <div className="flex items-center w-full">
-      <h3 className="text-xl text-almost-white p-4">
-       We take pride in our experience and high-quality work, backed by numerous satisfied clients.
-      </h3>
-    </div>
-  </div>
-</div>
-</div>
-<div>
-  <h1 className="relative text-almost-black font-black md:text-4xl sm:text-3xl mb-8 text-center tracking-wide">
-    A team of <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-500">professionals</span>
-    <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 h-1 bg-sky-500 rounded-lg transition-all duration-300 scale-x-0 hover:scale-x-100 origin-center"></span>
-  </h1>
-  <div className="rounded-lg bg-white flex items-center justify-center text-center overflow-hidden relative h-80 bg-cover bg-center" style={{ backgroundImage: `url(${Two})` }}>
-    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="flex items-center w-full">
-        <h3 className="text-xl text-almost-white p-4">
-          Our experts in programming, design, and IT are ready to tackle any challenge.
-        </h3>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-
-    <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 pt-8">
-    <div>
-  <h1 className="relative text-almost-black font-black md:text-4xl sm:text-3xl mb-8 text-center tracking-wide">
-    Tailored <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-500">solutions</span> for every project
-    <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 h-1 bg-sky-500 rounded-lg transition-all duration-300 scale-x-0 hover:scale-x-100 origin-center"></span>
-  </h1>
-  <div className="rounded-lg bg-white flex items-center justify-center text-center overflow-hidden relative h-80 bg-cover bg-center" style={{ backgroundImage: `url(${Three})` }}>
-    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="flex items-center w-full">
-        <h3 className="text-xl text-almost-white p-4">
-          We provide solutions that are perfectly suited to your business and specific needs.
-        </h3>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <h1 className="relative text-almost-black font-black md:text-4xl sm:text-3xl mb-8 text-center tracking-wide">
-    The most <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-500">competitive</span> prices
-    <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 h-1 bg-sky-500 rounded-lg transition-all duration-300 scale-x-0 hover:scale-x-100 origin-center"></span>
-  </h1>
-  <div className="rounded-lg bg-white flex items-center justify-center text-center overflow-hidden relative h-80 bg-cover bg-center" style={{ backgroundImage: `url(${Four})` }}>
-    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="flex items-center w-full">
-        <h3 className="text-xl text-almost-white p-4">
-          High quality doesn’t have to be expensive. We offer affordable rates for every budget.
-        </h3>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-
-
-    <div className="grid grid-cols-1 gap-4 xl:grid-cols-2 xl:gap-8 pt-8">
-    <div>
-  <h1 className="relative text-almost-black font-black md:text-4xl sm:text-3xl mb-8 text-center tracking-wide">
-    Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-500">digital</span> services
-    <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 h-1 bg-sky-500 rounded-lg transition-all duration-300 scale-x-0 hover:scale-x-100 origin-center"></span>
-  </h1>
-  <div className="rounded-lg bg-white flex items-center justify-center text-center overflow-hidden relative h-80 bg-cover bg-center" style={{ backgroundImage: `url(${Five})` }}>
-    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="flex items-center w-full">
-        <h3 className="text-xl text-almost-white p-4">
-          Everything from website development to tech support, all in one place, with no need to look for other vendors.
-        </h3>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div>
-  <h1 className="relative text-almost-black font-black md:text-4xl sm:text-3xl mb-8 text-center tracking-wide">
-    Innovative <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-500">technology</span>
-    <span className="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-20 h-1 bg-sky-500 rounded-lg transition-all duration-300 scale-x-0 hover:scale-x-100 origin-center"></span>
-  </h1>
-  <div className="rounded-lg bg-white flex items-center justify-center text-center overflow-hidden relative h-80 bg-cover bg-center" style={{ backgroundImage: `url(${Six})` }}>
-    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-      <div className="flex items-center w-full">
-        <h3 className="text-xl text-almost-white p-4">
-          We stay up-to-date with the latest trends to offer you the most modern and effective solutions.
-        </h3>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
+    <HomeBlockOne/>
     </section>
 
     <section className="w-full">

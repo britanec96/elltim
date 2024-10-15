@@ -13,7 +13,12 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
+  overflow-x: hidden;
+}
+
+body
+ {
   margin: 0;
   font-family: "Epilogue", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -31,5 +36,9 @@ code {
 svg {
   display: flex;
   align-items: center;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.6); /* Здесь вы можете настроить параметры тени */
 }
 

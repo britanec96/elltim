@@ -30,7 +30,7 @@ function ServiceOrderFormShort() {
         onSubmit={handleSubmit}
         className="border-4 border-sky-700 p-6 rounded-lg space-y-4 w-full"
       >
-        <h1 className="text-5xl font-bold text-center mb-4 text-almost-black">Tech Troubles? <span className="text-sky-500">We're</span> Here to Help!</h1>
+        <h1 className="text-5xl font-bold text-center mb-4 text-almost-black">Tech Troubles? <span className="text-sky-600">We're</span> Here to Help!</h1>
 
 
         {/* Name */}
@@ -84,7 +84,7 @@ function ServiceOrderFormShort() {
         after:opacity-0 peer-checked:after:opacity-100"
     ></span>
     <p className="inline-flex text-almost-black ml-4">
-      I agree to the&nbsp;<a className="text-sky-500 underline cursor-pointer">terms</a>&nbsp;of personal data processing
+      I agree to the&nbsp;<a className="text-sky-600 underline cursor-pointer">terms</a>&nbsp;of personal data processing
     </p>
   </label>
 </div>
