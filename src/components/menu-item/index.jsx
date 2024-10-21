@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Импортируем Link
 
 export const MenuItem = ({ text = '', icon}) => {
   return (

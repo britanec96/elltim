@@ -12,6 +12,21 @@ export const MainSection = () => {
   useEffect(() => {
     sr.reveal('.reveal', {
       delay: 400,
+      distance: '30px',
+      duration: 800,
+      easing: 'ease-in-out',
+    });
+    sr.reveal('.reveal-700', {
+      delay: 700,
+      distance: '30px',
+      duration: 800,
+      easing: 'ease-in-out',
+    });
+    sr.reveal('.reveal-1200', {
+      delay: 1200,
+      distance: '30px',
+      duration: 800,
+      easing: 'ease-in-out',
     });
   }, [sr]);
   return (
@@ -23,18 +38,16 @@ export const MainSection = () => {
 </div>
     <PromoBlockHome/>
     <Wrapper>
-    <section className='reveal'>
-    <div className="text-center mb-12">
+    <div className="text-center mb-12 reveal-700">
         <h2 className="text-4xl md:text-7xl font-bold text-gray-900 mt-14">
         Design, Programming, and Solutions
         </h2>
-        <h1 className="text-4xl md:text-5xl mt-5 font-bold text-sky-600">
+        <h1 className="text-4xl md:text-5xl mt-5 font-fira text-sky-600">
         For All Your Needs at The Lowest Prices:
         </h1>
       </div>
     <Carousel/>
     <HomeBlockOne/>
-    </section>
 
     <section className="w-full">
       <div className='bg-white rounded-lg'>

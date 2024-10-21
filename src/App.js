@@ -6,7 +6,6 @@ import  About  from "./pages/About";
 import { Order } from "./pages/Order";
 import  Testimonials  from "./pages/Testimonials";
 import  Portfolio  from "./pages/Portfolio";
-import  Blog  from "./pages/Blog";
 import  Contact  from "./pages/Contact";
 import  Pricing  from "./pages/Pricing";
 import { Footer } from "./components/footer";
@@ -25,7 +24,7 @@ function App() {
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricing" element={<Pricing />} />
-          <Route path="/webdev" element={<WebDev />} />
+          <Route path="/web-development" element={<WebDev />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order" element={<Order />} />

@@ -127,7 +127,7 @@ function ServiceOrderForm() {
         </div>
 
         {/* Кнопка отправки */}
-        <Button hasBorderCustom={ true }
+        <Button hasBlueStyle={ true }
           type="submit"
         >
           Sent

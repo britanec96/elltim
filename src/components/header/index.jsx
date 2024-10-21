@@ -35,7 +35,7 @@ export const Header = () => {
           <NavItem text='Contact Us' to="/contact" />
         </nav>
         <div className="hidden ml-auto xl:flex space-x-5">
-          <Button hasBorderCustom={true}>
+          <Button hasBlueStyle={true}>
             Get Help
           </Button>
         </div>

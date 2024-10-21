@@ -45,7 +45,7 @@ export const MobileMenu = ({ isOpen = false, onClose }) => {
 </Link>
 <div className="mx-4" /> 
 <Link to="/about">
-  <NavItem text='About Us' />
+  <NavItem text='About' />
 </Link>
 <div className="mx-4" /> 
 <Link to="/contact">
@@ -55,7 +55,7 @@ export const MobileMenu = ({ isOpen = false, onClose }) => {
 
 
           <div className="flex flex-col space-y-5">
-            <Button hasBorderCustom={true}>
+            <Button hasBlueStyle={true}>
               Get Help
             </Button>
           </div>

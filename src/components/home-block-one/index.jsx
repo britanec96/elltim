@@ -6,6 +6,7 @@ import Four from '../../images/Four.png';
 import Five from '../../images/five.png';
 import Six from '../../images/Six.png';
 import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
+import { Button } from '../button';
 
 const HomeBlockOne = () => {
   const sr = useScrollReveal();
@@ -31,7 +32,7 @@ const HomeBlockOne = () => {
         </h1>
       </div>
 
-      <div className="text-center text-lg md:text-xl text-gray-600 mb-12 reveal">
+      <div className="text-center text-lg md:text-xl text-gray-600 mb-12 reveal font-fira">
         <p>You don't have to know computers or software — we handle it all for you.</p>
         <p>
         We're not going to teach you how to fish, we're giving you the{' '}
@@ -64,9 +65,10 @@ const HomeBlockOne = () => {
 
           {/* Кнопка */}
           <div className="mt-6">
-            <button className="mt-2 float-start border-2 text-sky-600 px-4 py-2 rounded-lg hover:text-almost-white hover:bg-sky-500 transition duration-300">
+            <Button 
+            hasBlueStyle={true}>
               Reviews
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -104,9 +106,10 @@ const HomeBlockOne = () => {
 
           {/* Кнопка */}
           <div className="mt-6">
-            <button className="mt-2 float-end border-2 text-sky-600 px-4 py-2 rounded-lg hover:text-almost-white hover:bg-sky-500 transition duration-300">
+          <Button 
+            hasBlueStyle={true}>
               About Us
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -144,9 +147,10 @@ const HomeBlockOne = () => {
 
           {/* Кнопка */}
           <div className="mt-6">
-            <button className="mt-2 float-start border-2 text-sky-600 px-4 py-2 rounded-lg hover:text-almost-white hover:bg-sky-500 transition duration-300">
+          <Button 
+            hasBlueStyle={true}>
               Portfolio
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -182,9 +186,10 @@ const HomeBlockOne = () => {
 
           {/* Кнопка */}
           <div className="mt-6">
-            <button className="mt-2 float-end border-2 text-sky-600 px-4 py-2 rounded-lg hover:text-almost-white hover:bg-sky-500 transition duration-300">
+          <Button 
+            hasBlueStyle={true}>
               Pricing
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -222,9 +227,10 @@ const HomeBlockOne = () => {
 
           {/* Кнопка */}
           <div className="mt-6">
-            <button className="mt-2 float-start border-2 text-sky-600 px-4 py-2 rounded-lg hover:text-almost-white hover:bg-sky-500 transition duration-300">
-              Contact Us Today
-            </button>
+          <Button 
+            hasBlueStyle={true}>
+              Contact Us 
+            </Button>
           </div>
         </div>
 

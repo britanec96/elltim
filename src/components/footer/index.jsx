@@ -35,7 +35,7 @@ export const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/webdev" className="hover:text-sky-600">Web Development</Link>
+                <Link to="/web-development" className="hover:text-sky-600">Web Development</Link>
               </li>
               <li>
                 <Link to="/graphic-design" className="hover:text-sky-600">Graphic Design</Link>

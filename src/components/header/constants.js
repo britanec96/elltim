@@ -7,7 +7,7 @@ export const FEATURES = [
 ];
 
 export const COMPANY = [
-    { text: 'Web Development', icon: <i className="ri-pages-line"></i>, to: '/webdev' },
+    { text: 'Web Development', icon: <i className="ri-pages-line"></i>, to: '/web-development' },
     { text: 'Graphic Design', icon: <i className="ri-pencil-ruler-line"></i>, to: '/graphic-design' },
     { text: 'Digital Marketing', icon: <i className="ri-wallet-3-line"></i>, to: '/digital-marketing' },
     { text: 'Mobile App Development (soon)', icon: <i className="ri-smartphone-line"></i>, to: '/mobile-app-development' },
