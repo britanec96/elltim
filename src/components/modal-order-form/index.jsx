@@ -55,78 +55,81 @@ function ContactFormModal({ toggleModal }) {
   };
 
   return (
-<div className="fixed inset-0 flex z-50">
-      {/* Фон модального окна */}
-      <div
-        className="absolute inset-0 bg-gray-800 opacity-60"
-        onClick={() => {
-          console.log("Closing modal via background click");
-          toggleModal();
-        }}
-      ></div>
+<div className="fixed inset-0 flex z-50 overflow-y-hidden h-screen">
+  {/* Фон модального окна */}
+  <div
+    className="absolute inset-0 bg-gray-800 opacity-60"
+    onClick={() => {
+      console.log("Closing modal via background click");
+      toggleModal();
+    }}
+  ></div>
 
-      {/* Контент модального окна */}
-      <div className="bg-almost-white w-full md:w-2/3 h-full p-6 shadow-lg z-10 flex flex-col justify-center items-center md:items-start md:text-left text-center">
-        <img className="w-56 mb-12" src={WebDevBack} alt="Background" />
-        <h2 className="text-8xl font-bold text-sky-500 mb-4">
-          Tell us what you <span className="text-almost-black">need</span> done.
-        </h2>
-        <p className="flex mb-5 text-lg font-fira">
-          Will guide you to create the perfect brief. The more detail the better. Don't be shy
-        </p>
+  {/* Контент модального окна */}
+  <div className="relative bg-almost-white w-full md:w-2/3 max-h-full p-6 md:p-20 shadow-lg z-10 flex flex-col justify-center items-center md:items-start md:text-left text-center">
+    <img className="max-w-[200px] mb-12" src={WebDevBack} alt="Background" />
+    
+    <h2 className="text-3xl xl:text-6xl font-bold text-sky-500 mb-4">
+      Tell us what you <span className="text-almost-black">need</span> done.
+    </h2>
 
-        {/* Форма */}
-        <form onSubmit={handleSubmit} className="w-full flex flex-col">
-          <div className="mb-4 flex-grow">
-            <textarea
-              id="message"
-              name="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="w-full h-40 px-4 py-2 border-2 border-sky-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 resize-none" // Добавьте resize-none, чтобы убрать возможность изменения размера
-              placeholder="Enter a few bullet points or a full description."
-            ></textarea>
-          </div>
+    <p className="m-5 text-sm xl:text-lg font-fira">
+      We'll guide you to create the perfect brief. The more detail, the better. Don't be shy.
+    </p>
 
-          {/* Ссылки на соцсети */}
-          <h1 className="flex text-xl font-fira text-sky-800 items-center justify-center">Other:</h1>
-          <div className="flex justify-center space-x-6 mb-6 text-sky-500 text-3xl">
-            <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-sky-700 transition-colors duration-200">
-              <i className="ri-whatsapp-fill"></i>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-sky-700 transition-colors duration-200">
-              <i className="ri-facebook-circle-fill"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-sky-700 transition-colors duration-200">
-              <i className="ri-instagram-fill"></i>
-            </a>
-          </div>
-
-          <div className="flex justify-between gap-10 mt-auto">
-            <Button
-              hasRedStyle={true}
-              type="button"
-              onClick={() => {
-                console.log("Closing modal via button");
-                toggleModal();
-              }}
-              className=""
-            >
-              Close
-            </Button>
-
-            <Button
-              hasBlueStyle={true}
-              type="submit"
-              className={`${isSubmitting ? 'opacity-50' : 'flex-grow'}`}
-              disabled={isSubmitting}
-            > 
-              {isSubmitting ? 'Sending...' : 'Send'}
-            </Button>
-          </div>
-        </form>
+    {/* Форма */}
+    <form onSubmit={handleSubmit} className="w-full flex flex-col">
+      <div className="m-4 flex-grow">
+        <textarea
+          id="message"
+          name="message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          className="w-full h-40 px-4 py-2 border-2 border-sky-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500 resize-none"
+          placeholder="Enter a few bullet points or a full description."
+        ></textarea>
       </div>
-    </div>
+
+      {/* Ссылки на соцсети */}
+      <h1 className="text-xl font-fira text-sky-800 text-center mb-4">Other:</h1>
+      <div className="flex justify-center space-x-6 mb-6 text-sky-500 text-3xl">
+        <a href="https://www.whatsapp.com" target="_blank" rel="noopener noreferrer" className="hover:text-sky-700 transition-colors duration-200">
+          <i className="ri-whatsapp-fill"></i>
+        </a>
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-sky-700 transition-colors duration-200">
+          <i className="ri-facebook-circle-fill"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-sky-700 transition-colors duration-200">
+          <i className="ri-instagram-fill"></i>
+        </a>
+      </div>
+
+      <div className="flex justify-between gap-10 mt-auto">
+        <Button
+          hasRedStyle={true}
+          type="button"
+          onClick={() => {
+            console.log("Closing modal via button");
+            toggleModal();
+          }}
+          className=""
+        >
+          Close
+        </Button>
+
+        <Button
+          hasBlueStyle={true}
+          type="submit"
+          className={`${isSubmitting ? 'opacity-50' : 'flex-grow'}`}
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Sending...' : 'Send'}
+        </Button>
+      </div>
+    </form>
+  </div>
+</div>
+
   );
 }
 
