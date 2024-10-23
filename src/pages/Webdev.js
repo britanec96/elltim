@@ -152,7 +152,7 @@ function WebDev() {
       </section>
       </Wrapper>
       <section>
-        <div className='bg-gray-900 p-5 mb-20 relative'>
+        <div className='bg-gray-900 p-5 relative'>
           <Wrapper>
          <h1 className='m-5 text-almost-white text-6xl font-extrabold'>So what are you waiting for?</h1>
          <p className='m-5 text-gray-100 text-xl'>Write to us now and get a 20% discount as the first customer</p>
@@ -164,6 +164,157 @@ function WebDev() {
          <i className="ri-arrow-left-line text-4xl ml-2 text-almost-white absolute bottom-14 animate-bounce-left-right"></i>
          </Wrapper>
         </div>
+        </section>
+        <section>
+        <div className="bg-gray-900 text-almost-white py-10">
+      <div className="container mx-auto text-left">
+        <h2 className="text-3xl font-bold mb-4">Showcased Work From Us</h2>
+        <p className="mb-10">Get some inspiration from Web Development projects</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {/* Card 1 */}
+          <div className="bg-gray-800 rounded-lg p-6">
+            <img src="https://storage.googleapis.com/website-production/uploads/2023/07/sweetkick-landing-page-example-1.png" alt="Website Design" className="mb-4 w-full" />
+            <h3 className="font-semibold text-2xl mb-2">Landing Page</h3>
+            <p>From <span className='text-md font-bold'>140 GBP</span> in 2-5 days.</p>
+            <div className="w-full my-5 text-md font-fira">
+                <div className="xl:flex xl:items-start items-center gap-2">
+                  <p><span className='text-sky-500'>Description:</span> A single-page website, often used for promoting a product, service, or event. It contains minimal interactive elements (forms, buttons).</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Development time:</span> 1-5 days</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Technologies:</span> HTML, CSS, JavaScript, CMS (e.g., WordPress),React, sometimes basic backend for form processing.</p>
+                </div>
+              </div>
+            <Button
+            hasWhiteStyle={true}
+            >
+            I Want That One!
+            </Button>
+          </div>
+
+          {/* Card 2 */}
+          <div className="bg-gray-800 rounded-lg p-6">
+            <img src="https://storage.googleapis.com/website-production/uploads/2023/07/sweetkick-landing-page-example-1.png" alt="App Design" className="mb-4 w-full" />
+            <h3 className="font-semibold text-2xl mb-2">Business Website</h3>
+            <p>From <span className='text-md font-bold'>400 GBP</span> in 1-3 weeks.</p>
+            <div className="w-full my-5 text-md font-fira">
+                <div className="xl:flex xl:items-start items-center gap-2">
+                  <p><span className='text-sky-500'>Description:</span> A multi-page website for a company with information about products, services, and contact details, sometimes with a blog. It may include contact forms and basic admin panels for content editing.</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Development time:</span> 2-5 weeks</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Technologies:</span> HTML, CSS, JavaScript, CMS (e.g., WordPress),React, sometimes basic backend for form processing.</p>
+                </div>
+              </div>
+            <Button
+            hasWhiteStyle={true}
+            >
+            I Want That One!
+            </Button>
+          </div>
+
+          {/* Card 3 */}
+          <div className="bg-gray-800 rounded-lg p-6">
+            <img src="https://storage.googleapis.com/website-production/uploads/2023/07/sweetkick-landing-page-example-1.png" alt="Website" className="mb-4 w-full" />
+            <h3 className="font-semibold text-2xl mb-2">E-commerce Website</h3>
+            <p>From <span className='text-md font-bold'>1800 GBP</span> in 5-8 weeks.</p>
+            <div className="w-full my-5 text-md font-fira">
+                <div className="xl:flex xl:items-start items-center gap-2">
+                  <p><span className='text-sky-500'>Description:</span> A website for online sales with a shopping cart, payment gateways, and product and user management. It includes features like user profiles, product filters, and search.</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Development time:</span> 5-8 weeks</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Technologies:</span> HTML, CSS, JavaScript, CMS (Shopify), frameworks (React), backend (Node.js), payment gateway integration (PayPal, Stripe).</p>
+                </div>
+              </div>
+            <Button
+            hasWhiteStyle={true}
+            >
+            I Want That One!
+            </Button>
+          </div>
+
+          {/* Card 4 */}
+          <div className="bg-gray-800 rounded-lg p-6">
+            <img src="https://storage.googleapis.com/website-production/uploads/2023/07/sweetkick-landing-page-example-1.png" alt="Website Design" className="mb-4 w-full" />
+            <h3 className="font-semibold text-2xl mb-2 opacity-30">Content Portal (soon)</h3>
+            <p>From <span className='text-md font-bold'>&&& GBP</span> in &&& days.</p>
+            <div className="w-full my-5 text-md font-fira">
+                <div className="xl:flex xl:items-start items-center gap-2">
+                  <p><span className='text-sky-500'>Description:</span>A website with a large amount of content, such as news portals or platforms for posting articles or blogs, with the ability to edit content through an admin panel.</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Development time:</span> &&& days</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Technologies:</span>CMS (Drupal, WordPress), advanced content management systems, possible API integration.</p>
+                </div>
+              </div>
+          </div>
+
+          {/* Card 5 */}
+          <div className="bg-gray-800 rounded-lg p-6">
+            <img src="https://storage.googleapis.com/website-production/uploads/2023/07/sweetkick-landing-page-example-1.png" alt="Website Design" className="mb-4 w-full" />
+            <h3 className="font-semibold text-2xl mb-2 opacity-30">Social Networking/Community Website (soon)</h3>
+            <p>From <span className='text-md font-bold'>&&& GBP</span> in &&& days.</p>
+            <div className="w-full my-5 text-md font-fira">
+                <div className="xl:flex xl:items-start items-center gap-2">
+                  <p><span className='text-sky-500'>Description:</span>Websites with user registration and authentication, allowing users to create and edit profiles, and interact with each other (e.g., social networks, forums).</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Development time:</span> &&& days</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Technologies:</span> Backend (Node.js, Django, Ruby on Rails), frontend frameworks (React, Angular), databases (PostgreSQL, MongoDB), authentication systems.</p>
+                </div>
+              </div>
+          </div>
+
+          {/* Card 6 */}
+          <div className="bg-gray-800 rounded-lg p-6">
+            <img src="https://storage.googleapis.com/website-production/uploads/2023/07/sweetkick-landing-page-example-1.png" alt="Website Design" className="mb-4 w-full" />
+            <h3 className="font-semibold text-2xl mb-2 opacity-30">Booking Website (soon)</h3>
+            <p>From <span className='text-md font-bold'>&&& GBP</span> in &&& days.</p>
+            <div className="w-full my-5 text-md font-fira">
+                <div className="xl:flex xl:items-start items-center gap-2">
+                  <p><span className='text-sky-500'>Description:</span>  Platforms for booking services (e.g., hotels, events, car rentals). They include complex booking forms, a calendar system, and payment gateways.</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Development time:</span> &&& days</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Technologies:</span> Backend (Node.js, Laravel, Django), frontend frameworks, integration with external services (calendar, payments), APIs.</p>
+                </div>
+              </div>
+          </div>
+
+          {/* Card 7 */}
+          <div className="bg-gray-800 rounded-lg p-6">
+            <img src="https://storage.googleapis.com/website-production/uploads/2023/07/sweetkick-landing-page-example-1.png" alt="Website Design" className="mb-4 w-full" />
+            <h3 className="font-semibold text-2xl mb-2 opacity-30">E-learning Website (soon)</h3>
+            <p>From <span className='text-md font-bold'>&&& GBP</span> in &&& days.</p>
+            <div className="w-full my-5 text-md font-fira">
+                <div className="xl:flex xl:items-start items-center gap-2">
+                  <p><span className='text-sky-500'>Description:</span> A website for online courses, lectures, and webinars. It includes complex elements like video players, testing systems, progress tracking, user profiles, and rating systems.</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Development time:</span> &&& days</p>
+                </div>
+                <div className="xl:flex xl:items-start items-center gap-2 mt-5">
+                  <p><span className='text-sky-500'>Technologies:</span> Backend (Django, Node.js, Laravel), video hosting (YouTube API, Vimeo), testing and analytics systems.</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
         </section>
     </>
   );
