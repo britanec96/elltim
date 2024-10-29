@@ -65,10 +65,6 @@ export const MainSection = () => {
        and we do not share or distribute your data to third parties.
         Your privacy and trust are our top priorities.</p>
     </section>
-   
-    <section>
-      
-  </section>
   </Wrapper>
     </>
   )
