@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// Images
 import WebIcon from '../images/WebDev.svg';
 import OurTeam from '../images/OurTeam.svg';
 import ReactIcon from '../images/reactjs-fill.svg';
@@ -6,13 +7,19 @@ import Node from '../images/nodejs-fill.svg';
 import JavaScript from '../images/javascript-fill.svg';
 import Tailwind from '../images/tailwind-css-fill.svg';
 import Html from '../images/html5-fill.svg';
+// Components
 import { Button } from '../components/button';
 import OrderFormModal from '../components/modal-order-form';
 import useScrollReveal from '../components/SCROLL-REVEAL/ScrollReveal';
 import { Wrapper } from '../components/wrapper';
+import CardList from '../components/cards/CardsIndex';
 
 
 function WebDev() {
+
+    // Раскрытие блока
+    const [isExpanded, setIsExpanded] = useState(false);
+    const toggleExpand = () => setIsExpanded((prev) => !prev);
 
     // Открытие/закрытие модального окна
   const [isModalOpen, setModalOpen] = useState(false);
@@ -21,16 +28,16 @@ function WebDev() {
       setModalOpen((prev) => !prev);
     };
 
+    // Функция для получения коэффициента масштабирования
+    const [isZoomed, setIsZoomed] = useState(false);
 
-  const [isZoomed, setIsZoomed] = useState(false);
-
-  // Функция для получения коэффициента масштабирования на половину экрана
-  const getScaleValue = () => {
-      const screenWidth = window.innerWidth;
-      return screenWidth > 1024 ? 0.5 : 1; 
+    const getScaleValue = () => {
+        const screenWidth = window.innerWidth;
+        return isZoomed ? (screenWidth > 768 ? 2 : 2) : 1;
     };
-
-  const toggleZoom = () => setIsZoomed((prev) => !prev);
+    
+    const toggleZoom = () => setIsZoomed((prev) => !prev);
+    
 
 
 
@@ -195,25 +202,34 @@ function WebDev() {
 
 
           {/* Card 1 */}
-          <div className="bg-gray-800 rounded-lg p-6">
-          <img
+          <div className={`bg-gray-800 rounded-lg p-6 transition-all duration-300 ${
+          isExpanded ? 'max-h-[1000px] opacity-100' : 'min-h-[380px] max-h-[480px] opacity-80'
+        }`}>
+      <img
         src="https://storage.googleapis.com/website-production/uploads/2023/07/sweetkick-landing-page-example-1.png"
         alt="Website Design"
         loading="lazy"
         className={`mb-4 w-full cursor-pointer transition-transform duration-300 ${isZoomed ? `scale-${getScaleValue() * 2}` : 'scale-100'}`}
         style={{
-          transform: isZoomed ? `scale(${getScaleValue() * 2})` : 'scale(2)',
+          transform: isZoomed ? `scale(${getScaleValue()})` : 'scale(1)',
           transition: 'transform 0.3s',
           maxWidth: '100%',
           height: 'auto',
         }}
-        onClick={toggleZoom} // Переключаем увеличение при клике
+        onClick={toggleZoom} // Toggle zoom on click
       />
-        
-        {/* Описание услуги */}
-        <h3 className="font-semibold text-2xl mb-2">Landing Page</h3>
-        <p>From <span className="text-md font-bold">140 GBP</span> in 2-5 days.</p>
-        <div className="w-full my-5 text-md font-fira">
+      
+      {/* Service Title */}
+      <h3 className="font-semibold text-2xl mb-2">Landing Page</h3>
+      <p>From <span className="text-md font-bold">140 GBP</span> in 2-5 days.</p>
+      
+      {/* Expandable Description Section with max-height animation */}
+      <div
+        className={`overflow-hidden transition-max-height duration-500 ease-in-out ${
+          isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
+        }`}
+      >
+        <div className="text-md font-fira">
           <div className="xl:flex xl:items-start items-center gap-2">
             <p><span className="text-sky-500">Description:</span> A single-page website, often used for promoting a product, service, or event. It contains minimal interactive elements (forms, buttons).</p>
           </div>
@@ -224,13 +240,19 @@ function WebDev() {
             <p><span className="text-sky-500">Technologies:</span> HTML, CSS, JavaScript, CMS (e.g., WordPress), React, sometimes basic backend for form processing.</p>
           </div>
         </div>
-        
-        {/* Кнопка действия */}
-        <Button hasWhiteStyle={true}>
-          Order
-        </Button>
-        <a href="https://vk.com" className='flex mt-3 font-bold hover:text-sky-500 transition-colors duration-300'>Site Example</a>
       </div>
+      
+      {/* Toggle Button for Description */}
+      <button onClick={toggleExpand} className="mt-3 text-sky-500 font-semibold hover:text-sky-300 transition-colors duration-300">
+        {isExpanded ? 'Show Less' : 'Show More'}
+      </button>
+      
+      {/* Action Button */}
+      <Button hasWhiteStyle={true}>
+        Order
+      </Button>
+      <a href="https://vk.com" className='flex mt-3 font-bold hover:text-sky-500 transition-colors duration-300'>Site Example</a>
+    </div>
 
 
 
@@ -359,6 +381,10 @@ function WebDev() {
       </div>
     </div>
         </section>
+        <Wrapper>
+        <CardList/>
+        </Wrapper>
+        
     </>
   );
 }
