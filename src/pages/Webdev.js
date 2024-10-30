@@ -381,9 +381,10 @@ function WebDev() {
       </div>
     </div>
         </section>
-        <Wrapper>
+          <div className='bg-gray-900'>
+            <h1 className='text-3xl text-center text-almost-white font-bold mb-4'>Built for You: Choose the Ideal Web Solution</h1>
         <CardList/>
-        </Wrapper>
+        </div>
         
     </>
   );
