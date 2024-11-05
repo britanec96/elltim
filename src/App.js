@@ -10,6 +10,7 @@ import  Contact  from "./pages/Contact";
 import  Pricing  from "./pages/Pricing";
 import { Footer } from "./components/footer";
 import WebDev from "./pages/Webdev";
+import GraphicDesignPage from "./pages/GraphicDesign";
 
 function App() {
   return (
@@ -25,7 +26,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/web-development" element={<WebDev />} />
-          <Route path="/order" element={<Order />} />
+          <Route path="/graphic-design" element={<GraphicDesignPage />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order" element={<Order />} />
           <Route path="/order" element={<Order />} />

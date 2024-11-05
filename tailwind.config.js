@@ -14,17 +14,12 @@ module.exports = {
     },
     extend: {
       keyframes: {
-        'bounce-left-right': {
-          '0%, 100%': { transform: 'translateX(0)' },
-          '50%': { transform: 'translateX(-20px)' },
-        },
         marquee: {
           '0%': { transform: 'translateX(300%)' }, 
           '100%': { transform: 'translateX(-100%)' }, 
         },
       },
       animation: {
-        'bounce-left-right': 'bounce-left-right 1.5s cubic-bezier(0.42, 0, 0.58, 1.2) infinite',
         'marquee': 'marquee 10s linear infinite', 
       },
       fontSize: {

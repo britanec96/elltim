@@ -1,15 +1,23 @@
 import ScrollReveal from 'scrollreveal';
+import { useEffect } from 'react';
 
-const useScrollReveal = () => {
+const useScrollReveal = (elements = []) => {
+  useEffect(() => {
+    const sr = ScrollReveal({
+      distance: '30px',
+      duration: 800,
+      easing: 'ease-in-out',
+      origin: 'bottom',
+    });
 
-  const sr = ScrollReveal({
-    distance: '30px',
-    duration: 800,
-    easing: 'ease-in-out',
-    origin: 'bottom',
-  });
-
-  return sr;
+    // Применяем настройки для каждого элемента
+    elements.forEach(({ selector, delay, options = {} }) => {
+      sr.reveal(selector, {
+        delay,
+        ...options,
+      });
+    });
+  }, [elements]);
 };
 
 export default useScrollReveal;

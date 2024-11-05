@@ -7,38 +7,25 @@ import HomeBlockOne from '../home-block-one';
 import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
 
 export const MainSection = () => {
-  const sr = useScrollReveal();
 
-  useEffect(() => {
-    sr.reveal('.reveal', {
-      delay: 400,
-      distance: '30px',
-      duration: 800,
-      easing: 'ease-in-out',
-    });
-    sr.reveal('.reveal-700', {
-      delay: 700,
-      distance: '30px',
-      duration: 800,
-      easing: 'ease-in-out',
-    });
-    sr.reveal('.reveal-1200', {
-      delay: 1200,
-      distance: '30px',
-      duration: 800,
-      easing: 'ease-in-out',
-    });
-  }, [sr]);
+  useScrollReveal([
+    { selector: '.element-delay-200', delay: 200, options: { distance: '50px' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '60px' } },
+    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
+    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
+    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
+  ]);
+
   return (
     <>
-<div className="relative w-full overflow-hidden h-11 bg-yellow-400 flex items-center">
+<div className="relative w-full overflow-hidden h-11 bg-almost-white flex items-center">
   <div className="animate-marquee whitespace-nowrap text-xl">
     New Users Event - 50% off first orders - Use code NEW2024
   </div>
 </div>
     <PromoBlockHome/>
     <Wrapper>
-    <div className="text-center mb-12 reveal-700">
+    <div className="text-center mb-12 element-delay-2000">
         <h2 className="text-4xl md:text-7xl font-bold text-gray-900 mt-14">
         Design, Programming, and Solutions
         </h2>

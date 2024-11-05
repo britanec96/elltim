@@ -11,19 +11,18 @@ import { Button } from '../button';
 const HomeBlockOne = () => {
   const sr = useScrollReveal();
 
-  useEffect(() => {
-    sr.reveal('.reveal', {
-      delay: 300,
-      distance: '30px',
-      duration: 800,
-      easing: 'ease-in-out',
-    });
-  }, [sr]);
+  useScrollReveal([
+    { selector: '.element-delay-200', delay: 200, options: { distance: '50px' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '60px' } },
+    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
+    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
+    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
+  ]);
 
   return (
     <div className="py-20 px-4 md:px-8 mt-20">
 
-      <div className="text-center mb-12 reveal">
+      <div className="text-center mb-12 element-delay-200">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
           Power Up Your Ideas With
         </h2>
@@ -32,7 +31,7 @@ const HomeBlockOne = () => {
         </h1>
       </div>
 
-      <div className="text-center text-lg md:text-xl text-gray-600 mb-12 reveal font-fira">
+      <div className="text-center text-lg md:text-xl text-gray-600 mb-12 element-delay-200 font-fira">
         <p>You don't have to know computers or software — we handle it all for you.</p>
         <p>
         We're not going to teach you how to fish, we're giving you the{' '}
@@ -42,13 +41,13 @@ const HomeBlockOne = () => {
         </p>
       </div>
 
-      <div className='flex items-center justify-center text-gray-400 reveal'>
+      <div className='flex items-center justify-center text-gray-400 element-delay-200'>
       <i className="ri-money-pound-circle-line mr-1"></i> <h1 className='mr-5'>Low-Budget</h1>
       <i className="ri-speed-line mr-1"></i> <h1 className='mr-5'>Fast</h1>
       <i className="ri-star-line mr-1"></i> <h1>Qualitatively</h1>
       </div>
 
-      <div className="md:flex md:justify-between mt-12 reveal">
+      <div className="md:flex md:justify-between mt-12 element-delay-200">
         <div className="md:w-1/2">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           120+ Successfully Completed Orders
@@ -88,7 +87,7 @@ const HomeBlockOne = () => {
 
 
 
-      <div className="md:flex flex-row-reverse md:justify-between mt-24 reveal">
+      <div className="md:flex flex-row-reverse md:justify-between mt-24 element-delay-200">
         <div className="md:w-1/2">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           A Team Of Professionals
@@ -131,7 +130,7 @@ const HomeBlockOne = () => {
 
 
 
-      <div className="md:flex md:justify-between mt-24 reveal">
+      <div className="md:flex md:justify-between mt-24 element-delay-200">
         <div className="md:w-1/2">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           Tailored Solutions For Every Project
@@ -170,7 +169,7 @@ const HomeBlockOne = () => {
 
 
 
-      <div className="md:flex flex-row-reverse md:justify-between mt-24 reveal">
+      <div className="md:flex flex-row-reverse md:justify-between mt-24 element-delay-200">
         <div className="md:w-1/2">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           The Most Competitive Prices
@@ -210,7 +209,7 @@ const HomeBlockOne = () => {
 
 
 
-      <div className="md:flex md:justify-between mt-24 reveal">
+      <div className="md:flex md:justify-between mt-24 element-delay-200">
         <div className="md:w-1/2">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
           Comprehensive Digital Services
@@ -250,7 +249,7 @@ const HomeBlockOne = () => {
 
 
       <div 
-  className="md:flex flex-row-reverse mt-24 h-[30rem] reveal bg-cover bg-center rounded-lg shadow-md"
+  className="md:flex flex-row-reverse mt-24 h-[30rem] element-delay-200 bg-cover bg-center rounded-lg shadow-md"
   style={{ backgroundImage: `url(${Six})` }} // Здесь 0.5 - уровень прозрачности
 >
 

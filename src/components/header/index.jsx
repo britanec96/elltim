@@ -7,7 +7,7 @@ import { NavMenu } from '../nav-menu';
 import { COMPANY, FEATURES } from './constants';
 import { Button } from '../button';
 import { MobileMenu } from '../mobile-menu';
-import Logo from '../../images/logo-no-background.svg';
+import Logo from '../../images/Logo.svg';
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,7 +21,7 @@ export const Header = () => {
     <>
       <header className='flex items-center'>
         <Link to="/" className='flex ml-2 mr-10 text-xl antialiased cursor-pointer tracking-widest'>
-          <img className='flex w-60' src={Logo} alt="Logo" />
+          <img className='flex w-64' src={Logo} alt="Logo" />
         </Link>
         <nav className='hidden xl:flex space-x-6 ml-8 items-center'>
         <NavItem text='Company' onSelect={handleSelect} selected={selected}>
@@ -35,7 +35,7 @@ export const Header = () => {
           <NavItem text='Contact Us' to="/contact" />
         </nav>
         <div className="hidden ml-auto xl:flex space-x-5">
-          <Button hasBlueStyle={true}>
+          <Button hasWhiteStyle={true}>
             Get Help
           </Button>
         </div>
