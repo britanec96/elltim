@@ -7,7 +7,6 @@ import { NavMenu } from '../nav-menu';
 import { COMPANY, FEATURES } from './constants';
 import { Button } from '../button';
 import { MobileMenu } from '../mobile-menu';
-import Logo from '../../images/Logo.svg';
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,10 +19,11 @@ export const Header = () => {
   return (
     <>
       <header className='flex items-center'>
-        <Link to="/" className='flex ml-2 mr-10 text-xl antialiased cursor-pointer tracking-widest'>
-          <img className='flex w-64' src={Logo} alt="Logo" />
+        <Link to="/" className='antialiased cursor-pointer tracking-widest mr-20'>
+        <h1 className="text-almost-white text-xl font-fira font-extrabold">{"<Northern>"}</h1>
+        <h1 className="text-sky-500 text-xl -mt-2 font-fira font-extrabold">{"</Techies>"}</h1>
         </Link>
-        <nav className='hidden xl:flex space-x-6 ml-8 items-center'>
+        <nav className='hidden xl:flex space-x-6 items-center'>
         <NavItem text='Company' onSelect={handleSelect} selected={selected}>
   <NavMenu items={FEATURES} onClose={() => setSelected('')} />
 </NavItem>

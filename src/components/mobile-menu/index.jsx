@@ -15,11 +15,11 @@ export const MobileMenu = ({ isOpen = false, onClose }) => {
   return (
     <>
       <div className={`absolute top-0 left-0 right-0 bg-gray-300 opacity-50 z-10 min-h-[150vh] ${isOpen ? 'flex' : 'hidden'}`} onClick={onClose}></div>
-      <div className={`absolute right-0 top-0 w-1/2 bg-white z-20 justify-center min-h-[150vh] ${isOpen ? 'flex' : 'hidden'}`}>
+      <div className={`absolute right-0 top-0 w-1/2 bg-gray-800 z-20 justify-center min-h-[150vh] ${isOpen ? 'flex' : 'hidden'}`}>
         <nav className="my-20 mx-5 space-y-5 text-xl w-full">
 
           <NavItem text='Company' onSelect={handleSelect} selected={selected}>
-            <div className="flex flex-col space-y-5 p-2">
+            <div className="flex flex-col space-y-5 p-2 text-sky-500">
               {FEATURES.map(({ text, icon, to }) => (
                 <Link to={to} key={text}>
                   <MenuItem text={text} icon={icon} />
@@ -30,7 +30,7 @@ export const MobileMenu = ({ isOpen = false, onClose }) => {
 
 
           <NavItem text='Services' onSelect={handleSelect} selected={selected}>
-            <div className="flex flex-col space-y-5 p-2">
+            <div className="flex flex-col space-y-5 p-2 text-sky-500">
               {COMPANY.map(({ text, icon, to }) => (
                 <Link to={to} key={text}>
                   <MenuItem text={text} icon={icon} />
@@ -55,7 +55,7 @@ export const MobileMenu = ({ isOpen = false, onClose }) => {
 
 
           <div className="flex flex-col space-y-5">
-            <Button hasBlueStyle={true}>
+            <Button hasWhiteStyle={true}>
               Get Help
             </Button>
           </div>
