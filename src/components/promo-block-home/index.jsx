@@ -33,7 +33,7 @@ export const PromoBlockHome = () => {
     muted 
     playsInline
   >
-    <source src={require('../../videos/WebSitePrezi.mp4')} type="video/mp4" />
+    <source src={require('../../videos/CoddingFootage.mp4')} type="video/mp4" />
   </video>
 
   {/* Основной контент */}

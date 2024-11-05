@@ -5,6 +5,7 @@ import ServiceOrderFormShort from '../order-form-short';
 import Carousel from '../carousel';
 import HomeBlockOne from '../home-block-one';
 import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
+import FeaturesSection from '../promo-block-home-2';
 
 export const MainSection = () => {
 
@@ -25,16 +26,11 @@ export const MainSection = () => {
 </div>
     <PromoBlockHome/>
     <Wrapper>
-    <div className="text-center mb-12 element-delay-2000">
-        <h2 className="text-4xl md:text-7xl font-bold text-gray-900 mt-14">
-        Design, Programming, and Solutions
-        </h2>
-        <h1 className="text-4xl md:text-5xl mt-5 font-fira text-sky-600">
-        For All Your Needs at The Lowest Prices:
-        </h1>
-      </div>
+    <FeaturesSection/>
     <Carousel/>
     <HomeBlockOne/>
+
+    
 
     <section className="w-full">
       <div className='bg-white rounded-lg'>
