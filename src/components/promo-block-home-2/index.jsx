@@ -1,30 +1,35 @@
 import React from 'react';
+import { Button } from '../button';
 
 const FeaturesSection = () => {
   return (
-    <div className="bg-gradient-to-b from-purple-900 to-purple-800 text-white py-16">
+    <div className="bg-gray-900">
       <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Feature Boxes */}
           <FeatureCard
-            title="Customized Solutions"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."
-            icon="🤖" // Example placeholder icon, replace with actual icons as needed
+            title="Software & Computer Assistance"
+            description="Having trouble with your software or hardware? We troubleshoot, repair, and optimize all types of devices to keep you running smoothly, whether it's a small fix or an in-depth repair."
+            icon="💻"
+            button="Chat"
           />
           <FeatureCard
-            title="ROI-Driven Approach"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."
-            icon="📈"
+            title="Website Development"
+            description="From basic sites to more complex setups, we offer website design and development services that bring your vision online. Fully responsive, user-friendly, and optimized for success. Any budget"
+            icon="🛸"
+            button="Explore"
           />
           <FeatureCard
-            title="Creative Solution"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."
-            icon="✂️"
+            title="Graphic Design"
+            description="From logos and branding to social media content and website graphics, we create visuals that make your business stand out. Affordable, professional, and tailored to your needs."
+            icon="🃏"
+            button="Explore"
           />
           <FeatureCard
-            title="Expert Team"
-            description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever."
-            icon="🧩"
+            title="Custom PC Builds"
+            description="Need a new computer built just for you? We design and assemble custom PCs that meet your exact specifications, whether for gaming, work, or personal use. Much cheaper then on the market."
+            icon="🧌"
+            button="Explore"
           />
         </div>
 
@@ -45,11 +50,14 @@ const FeaturesSection = () => {
   );
 };
 
-const FeatureCard = ({ title, description, icon }) => (
-  <div className="bg-purple-700 p-6 rounded-lg shadow-lg text-center">
+const FeatureCard = ({ title, description, icon, button }) => (
+  <div className="bg-gray-800 p-6 my-12 rounded-lg shadow-lg text-center text-almost-white transition-transform duration-300 ease-in-out hover:scale-105">
     <div className="text-4xl mb-4">{icon}</div>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-sm text-gray-300">{description}</p>
+    <Button hasWhiteStyle={true}>
+              {button}
+            </Button>
   </div>
 );
 

@@ -18,7 +18,7 @@ export const Header = () => {
 
   return (
     <>
-      <header className='flex items-center'>
+      <header className='flex items-center my-4'>
         <Link to="/" className='antialiased cursor-pointer tracking-widest mr-20'>
         <h1 className="text-almost-white text-xl font-fira font-extrabold">{"<Northern>"}</h1>
         <h1 className="text-sky-500 text-xl -mt-2 font-fira font-extrabold">{"</Techies>"}</h1>
