@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 // Изображения
-import WebIcon from '../images/WebDev.svg';
-import OurTeam from '../images/OurTeam.svg';
+import WebDevIcon from '../images/WebDevIcon.svg';
+import WhyChooseUsIcon from '../images/WhyChooseUsIcon.svg';
 import ReactIcon from '../images/reactjs-fill.svg';
 import Node from '../images/nodejs-fill.svg';
 import JavaScript from '../images/javascript-fill.svg';
@@ -27,13 +27,16 @@ function WebDev() {
 
 
   // ScrollReveal эффект при загрузке
-  useScrollReveal([
-    { selector: '.element-delay-200', delay: 200, options: { distance: '50px' } },
-    { selector: '.element-delay-400', delay: 400, options: { distance: '60px' } },
-    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
-    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
-  ]);
+    useScrollReveal([
+      { selector: '.element-delay-200', delay: 200, options: { distance: '70px' } },
+      { selector: '.element-delay-400', delay: 400, options: { distance: '70px' } },
+      { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
+      { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
+      { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
+      { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px' } },
+      { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px' } },
+    ]);
+  
 
   // Автоматический скролл
   const scrollToSection = () => {
@@ -44,7 +47,6 @@ function WebDev() {
     });
   };
   
-
   return (
     <>
 
@@ -86,14 +88,14 @@ function WebDev() {
           </div>
           <div className="w-full h-px bg-gray-200 my-12 opacity-25"></div>
         </div>
-        <div className="flex justify-between mt-12 element-delay-800">
-          <p className="text-almost-white font-bold text-xl mt-7">The best technologies for your website</p>
+        <div className="flex justify-between mt-12">
+          <p className="text-almost-white font-bold text-xl mt-7 element-delay-800">The best technologies for your website</p>
           <div className="flex flex-col md:flex-row xl:flex-row md:space-x-8 space-y-3">
-          <img className='mt-3' src={ReactIcon} alt="ReactIcon" loading="lazy" />
-          <img src={Node} alt="Node" loading="lazy"/>
-          <img src={JavaScript} alt="JavaScript" loading="lazy" />
-          <img src={Tailwind} alt="Tailwind" loading="lazy" />
-          <img src={Html} alt="Html" loading="lazy" />
+          <img className='mt-3 element-delay-800' src={ReactIcon} alt="ReactIcon" loading="lazy" />
+          <img className='element-delay-1200' src={Node} alt="Node" loading="lazy"/>
+          <img className='element-delay-1400' src={JavaScript} alt="JavaScript" loading="lazy" />
+          <img className='element-delay-1600' src={Tailwind} alt="Tailwind" loading="lazy" />
+          <img className='element-delay-1800' src={Html} alt="Html" loading="lazy" />
           </div>
         </div>
       </div>
@@ -117,13 +119,15 @@ function WebDev() {
     <section>
         <div className='bg-gray-900 p-5 text-center relative'>
          <h1 className='m-5 text-almost-white text-6xl font-extrabold element-delay-1200'>Ready to grow?</h1>
-         <p className='m-5 text-gray-100 text-2xl element-delay-1200'>Start your website with us from just <span className='text-sky-500 text-3xl font-semibold'>£140!</span></p>
+         <div className='element-delay-1400'>
+         <p className='m-5 text-gray-100 text-2xl'>Start your website with us from just <span className='text-sky-500 text-3xl font-semibold'>£140!</span></p>
          <Button
          onClick={scrollToSection}
-         className='m-5 element-delay-1400'
+         className='m-5'
          hasWhiteStyle={true}>
           Order Now
          </Button>
+         </div>
         </div>
     </section>
 
@@ -134,27 +138,27 @@ function WebDev() {
     <Wrapper>
     <section>
     <div className='grid grid-cols-1 md:grid-cols-2 gap-4 w-full text-center md:divide-x md:divide-gray-300'>
-    <div className='flex flex-col items-center element-delay-1200'>
-    <img className="w-[350px] md:w-[50%] sm:w-[100%] h-auto" src={WebIcon} alt="Web Icon" loading="lazy" />
-          <h1 className='font-bold text-lg'>What is Web Development?</h1>
-          <p className='m-5'>Web development is the process of designing 
+    <div className='flex flex-col items-center'>
+    <img className="w-1/2 h-auto m-10 element-delay-1200" src={WebDevIcon} alt="Web Icon" loading="lazy" />
+          <h1 className='font-bold text-lg text-almost-white element-delay-1400'>What is Web Development?</h1>
+          <p className='m-5 text-gray-300 element-delay-1600'>Web development is the process of designing 
             and building websites. Web developers use programming languages,
              software, and tools to create everything you see on a website,
               from text and images to videos, apps and games. You may need to
                hire a web developer if you want to build a site of your own or
                 add features to an existing site.</p>
         </div>
-        <div className='flex flex-col items-center element-delay-1400'>
-        <img className="w-[350px] md:w-[50%] sm:w-[100%] h-auto" src={OurTeam} alt="Web Icon" loading="lazy" />
-        <h1 className='font-bold text-lg'>Why Choose Us for Your Website Development?</h1>
-          <p className='m-5'>We bring a blend of creativity, technical expertise, and personalized solutions to build websites that not only look great but also perform exceptionally. Our team is committed to delivering user-friendly, responsive, and SEO-optimized websites that are tailored to your business needs. We ensure a seamless development process, from concept to launch, with a focus on your goals and audience.</p>
+        <div className='flex flex-col items-center'>
+        <img className="w-1/2 h-auto m-10 element-delay-1200" src={WhyChooseUsIcon} alt="Web Icon" loading="lazy" />
+        <h1 className='font-bold text-lg text-almost-white element-delay-1400'>Why Choose Us for Your Website Development?</h1>
+          <p className='m-5 text-gray-300 element-delay-1600'>We bring a blend of creativity, technical expertise, and personalized solutions to build websites that not only look great but also perform exceptionally. Our team is committed to delivering user-friendly, responsive, and SEO-optimized websites that are tailored to your business needs. We ensure a seamless development process, from concept to launch, with a focus on your goals and audience.</p>
         </div>
       </div>
       </section>
       <section>
         <div className='mt-20 mb-20 bg-gray-900 text-almost-white rounded-lg p-5 text-center md:text-left element-delay-200'>
           <h1 className='text-center xl:text-5xl sm:text-3xl font-bold m-5'>How Does Development Process Work?</h1>
-        <div className='grid xl:grid-cols-4 sm:grid-cols-1'>
+        <div className='grid xl:grid-cols-4 sm:grid-cols-1 gap-5'>
           <div className='flex flex-col justify-center sm:items-center xl:items-start'>
           <i className="ri-creative-commons-by-line text-6xl text-sky-500 m-5 "></i>
             <h1 className='text-xl font-bold font'>Consultation and 50% Prepayment</h1>

@@ -35,9 +35,11 @@ export const Header = () => {
           <NavItem text='Contact Us' to="/contact" />
         </nav>
         <div className="hidden ml-auto xl:flex space-x-5">
+        <Link to="/order" className='antialiased cursor-pointer tracking-widest mr-20'>
           <Button hasWhiteStyle={true}>
-            Get Help
+          Order
           </Button>
+          </Link>
         </div>
         <div 
           className="flex xl:hidden ml-auto cursor-pointer z-30"

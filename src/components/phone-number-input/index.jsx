@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Whatsup from '../../images/whatsapp-fill.png';
-import Telegram from '../../images/telegram-fill.png';
 
 const countryCodes = {
   "United States": "+1",
@@ -25,7 +23,7 @@ const countryCodes = {
   "United Arab Emirates": "+971",
 };
 
-function PhoneNumberInput() {
+function PhoneNumberInput({ value, onChange }) {
   const [selectedCountry, setSelectedCountry] = useState("United Kingdom");
   const [phonePlaceholder, setPhonePlaceholder] = useState(countryCodes["United Kingdom"] + " (555) 000-000");
 
@@ -35,39 +33,41 @@ function PhoneNumberInput() {
     setPhonePlaceholder(countryCodes[country] + " (555) 000-000");
   };
 
+  const handlePhoneChange = (e) => {
+    onChange(e.target.value); // Передаем введенный номер родительскому компоненту
+  };
+
   return (
-    <>
-<div className="flex items-center space-x-2"> {/* Добавляем flex и отступы между элементами */}
-  <div className="flex items-center space-x-2">
-    <img className="w-6 h-6" src={Whatsup} alt="WhatsApp" /> {/* Задаем размеры изображения для единообразия */}
-    <img className="w-6 h-6" src={Telegram} alt="Telegram" />
-  </div>
-  <label className="text-almost-black">Telegram/Whats'up number:</label>
-</div>
-    <div className="rounded-lg mt-2">
-      <div className="relative mt-2 text-gray-500">
-        <div className="absolute inset-y-0 left-3 top-6 my-auto h-6 flex items-center border-r pr-2">
-          <select
-            value={selectedCountry}
-            onChange={handleCountryChange}
-            className="text-sm outline-none rounded-lg h-full"
-          >
-            {Object.keys(countryCodes).map((country) => (
-              <option key={country} value={country}>
-                {country}
-              </option>
-            ))}
-          </select>
+    <div className="rounded-lg mt-2 mx-4 flex items-center space-x-3 max-w-7xl">
+      {/* Country Selector */}
+      <div className="relative">
+        <select
+          value={selectedCountry}
+          onChange={handleCountryChange}
+          className="text-sm outline-none rounded-lg h-12 pl-4 pr-12 border focus:border-sky-500 focus:ring-2 focus:ring-sky-500 appearance-none"
+        >
+          {Object.keys(countryCodes).map((country) => (
+            <option key={country} value={country}>
+              {country}
+            </option>
+          ))}
+        </select>
+        {/* Custom Arrow Icon */}
+        <div className="absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-500">
+          <i className="ri-arrow-down-s-line"></i>
         </div>
-        </div>
-        <input
-          type="tel"
-          placeholder={phonePlaceholder}
-          className="w-full pl-48 pr-3 py-2 appearance-none bg-transparent outline-none border focus:border-slate-600 rounded-lg focus:text-sky-800 text-2xl"
-          required
-        />
+      </div>
+
+      {/* Phone Input */}
+      <input
+        type="tel"
+        value={value}  // Устанавливаем значение через пропс
+        onChange={handlePhoneChange} // Обработчик для передачи изменений
+        placeholder={phonePlaceholder}
+        className="w-full pl-4 py-2 bg-transparent outline-none border focus:border-sky-500 rounded-lg focus:text-sky-800 text-xl"
+        required
+      />
     </div>
-    </>
   );
 }
 

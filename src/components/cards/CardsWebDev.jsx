@@ -1,49 +1,90 @@
 import React, { useState } from 'react';
 import { Button } from '../button';
 import { Wrapper } from '../wrapper';
-import useScrollReveal from '../SCROLL-REVEAL/ScrollReveal';
+import { Link } from 'react-router-dom';
 
-const Card = ({ title, price, description, developmentTime, technologies, image, siteExample }) => {
-  const [isZoomed, setIsZoomed] = useState(false);
+const Card = ({ title, price, description, developmentTime, technologies, image }) => {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isHovering, setIsHovering] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const toggleZoom = () => {
-    setIsZoomed((prev) => !prev);
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    setPosition({ x, y });
   };
 
-  useScrollReveal([
-    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
-  ]);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className="bg-gray-800 text-almost-white rounded-lg p-6 mt-10 mb-10 transition-all duration-300">
-      <img
-        src={image}
-        alt={title}
-        loading="lazy"
-        className={`mb-4 w-[500px] h-[300px] object-cover cursor-pointer transition-transform duration-300 ${isZoomed ? 'scale-125' : 'scale-100'}`}
-        onClick={toggleZoom}
-      />
-      <h3 className="font-semibold text-2xl mb-2">{title}</h3>
-      <p>From <span className="text-md font-bold">{price}</span> in {developmentTime}.</p>
-      
+      <div
+        className="overflow-hidden relative w-full h-[300px]"
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          className={`mb-4 w-full h-full object-cover transition-transform duration-300 ${
+            isHovering ? 'scale-150' : 'scale-100'
+          }`}
+          style={{ transformOrigin: `${position.x}% ${position.y}%` }}
+          onClick={openModal}
+        />
+      </div>
+      <h3 className="font-semibold text-2xl my-2">{title}</h3>
+      <p>
+        From <span className="text-md font-bold">{price}</span> in {developmentTime}.
+      </p>
       <div className="text-md mt-5">
         <div className="flex items-start gap-2">
-          <p><span className="text-sky-500">Description:</span> {description}</p>
+          <p>
+            <span className="text-sky-500">Description:</span> {description}
+          </p>
         </div>
         <div className="flex items-start gap-2 mt-5">
-          <p><span className="text-sky-500">Development time:</span> {developmentTime}</p>
+          <p>
+            <span className="text-sky-500">Development time:</span> {developmentTime}
+          </p>
         </div>
         <div className="flex items-start gap-2 mt-5">
-          <p><span className="text-sky-500">Technologies:</span> {technologies}</p>
+          <p>
+            <span className="text-sky-500">Technologies:</span> {technologies}
+          </p>
         </div>
       </div>
-      
-      <Button hasWhiteStyle={true} className="mt-5">
-        Order
-      </Button>
-      <a href={siteExample} className="flex mt-3 font-bold hover:text-sky-500 transition-colors duration-300">
-        Site Example
-      </a>
+      <Link to="/order">
+        <Button hasWhiteStyle={true} className="mt-5">
+          Order
+        </Button>
+      </Link>
+
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+          onClick={closeModal}
+        >
+          <div className="relative">
+            <img
+              src={image}
+              alt={title}
+              className="max-w-full max-h-screen"
+              onClick={(e) => e.stopPropagation()}
+            />
+            <button
+              className="absolute top-2 right-2 bg-red-500 text-white rounded-full p-2"
+              onClick={closeModal}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -56,17 +97,15 @@ const CardList = () => {
       developmentTime: '2-5 days',
       description: 'A single-page website for promoting a product.',
       technologies: 'HTML, CSS, JavaScript, CMS (e.g., WordPress), React, basic backend for form processing.',
-      image: 'https://unbounce.com/photos/1100X400.png',
-      siteExample: 'https://vk.com',
+      image: 'https://cdn.dribbble.com/userupload/15973642/file/original-9b1256bc0b31d08e471519037b3844e5.png?resize=1200x900&vertical=center',
     },
     {
       title: 'Business Website',
       price: '400 GBP',
       developmentTime: '1-3 weeks',
       description: 'A multi-page website for a company with information about products.',
-      technologies: 'HTML, CSS, JavaScript, CMS (e.g., WordPress),React,basic backend for form processing.',
-      image: 'https://d1hdtc0tbqeghx.cloudfront.net/wp-content/uploads/2023/04/10114555/Calendly-1.png',
-      siteExample: 'https://vk.com',
+      technologies: 'HTML, CSS, JavaScript, CMS (e.g., WordPress), React, basic backend for form processing.',
+      image: 'https://cdn.dribbble.com/userupload/8301468/file/original-c32dd51b82709aff59cec5d4b62f3be2.jpg?resize=1200x900&vertical=center',
     },
     {
       title: 'E-commerce Website',
@@ -74,8 +113,7 @@ const CardList = () => {
       developmentTime: '5-8 weeks',
       description: 'A website for online sales with a shopping cart, payment gateways, and product and user management.',
       technologies: 'HTML, CSS, JavaScript, CMS (Shopify), frameworks (React), backend (Node.js), payment gateway integration (PayPal, Stripe).',
-      image: 'https://cdn.dribbble.com/userupload/13606668/file/original-828e65a135620231018173b2b69c38ae.png?resize=1200x900&vertical=center',
-      siteExample: 'https://vk.com',
+      image: 'https://cdn.dribbble.com/userupload/5969124/file/original-5b5ab27e964531ebf6df77a092681ff4.png?resize=1200x900&vertical=center',
     },
     {
       title: 'Content Portal (soon)',
@@ -83,8 +121,7 @@ const CardList = () => {
       developmentTime: '??? days',
       description: 'A website with a large amount of content, such as news portals or platforms for posting articles or blogs',
       technologies: 'CMS (Drupal, WordPress), advanced content management systems, possible API integration.',
-      image: 'https://knowledge.hubspot.com/hubfs/best-news-site-design-8-20240911-21119.webp',
-      siteExample: 'https://vk.com',
+      image: 'https://cdn.dribbble.com/userupload/7381601/file/original-c56e86447d5486885da6d6297ca1043b.png?resize=1200x900&vertical=center',
     },
     {
       title: 'Social Networking/Community Website (soon)',
@@ -92,31 +129,20 @@ const CardList = () => {
       developmentTime: '??? days',
       description: 'Websites with user registration and authentication, allowing users to create and edit profiles',
       technologies: 'Backend (Node.js, Django, Ruby on Rails), frontend frameworks (React, Angular), databases (PostgreSQL, MongoDB), authentication systems.',
-      image: 'https://themes.getbootstrap.com/wp-content/uploads/2022/04/preview-screenshot.jpg',
-      siteExample: 'https://vk.com',
-    },
-    {
-      title: 'Booking Website (soon)',
-      price: '??? GBP',
-      developmentTime: '??? days',
-      description: 'Platforms for booking services (e.g., hotels, events, car rentals).',
-      technologies: 'Backend (Node.js, Laravel, Django), frontend frameworks, integration with external services (calendar, payments), APIs.',
-      image: 'https://www.chibikiu.com/wp-content/uploads/2023/06/what-is-booking.com-app-1.jpg',
-      siteExample: 'https://vk.com',
+      image: 'https://cdn.dribbble.com/userupload/10143564/file/original-efbc21892e4a94953c8f0ae1732d2025.png?resize=1200x900&vertical=center',
     },
   ];
 
   return (
     <Wrapper>
-    <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 element-delay-800">
-      {cardsData.map((card, index) => (
-        <Card key={index} {...card} />
-      ))}
-    </div>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {cardsData.map((card, index) => (
+          <Card key={index} {...card} />
+        ))}
+      </div>
     </Wrapper>
   );
 };
 
 export default CardList;
-
 

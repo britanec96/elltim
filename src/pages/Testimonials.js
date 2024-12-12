@@ -1,105 +1,94 @@
 import React from "react";
-import { Wrapper } from '../components/wrapper/index';
-import Two from '../../src/images/two.png';
-
-const reviewsData = [
-  {
-    name: "Johnx",
-    platform: "Google",
-    review:
-      "I recently hired Kristofer for my IT project, and I couldn't be happier with the results! His knowledge and expertise in computing technologies are evident in every aspect of his work. He was responsive, professional, and delivered everything on time. I highly recommend his services to anyone looking for reliable IT support!",
-    rating: 5,
-    img: "https://media.assettype.com/tnm%2Fimport%2Fsites%2Fdefault%2Ffiles%2FVKHarindran_NavrozeContractor_18062021_1200.jpg?w=640&auto=format%2Ccompress&fit=max",
-  },
-  {
-    name: "Jane Smith",
-    platform: "Google",
-    review:
-      "Thank you",
-    rating: 5,
-    img: "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg",
-  },
-  {
-    name: "Kristoff Pawdlowski",
-    platform: "Google",
-    review:
-      "I had a technical problem, and Daniel helped me right away. He was super friendly and solved the issue quickly.",
-    rating: 5,
-    img: "https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg",
-  },
-
-];
-
-const ReviewCard = ({ name, platform, review, rating, img }) => {
-  return (
-    <div className="bg-white p-6 rounded-lg shadow-md">
-      <div className="flex items-center">
-        <img src={img} alt={name} className="w-12 h-12 rounded-full mr-4 object-cover" />
-        <div>
-          <h4 className="text-lg font-semibold">{name}</h4>
-          <p className="text-sm text-gray-500">via {platform}</p>
-        </div>
-      </div>
-      <div className="mt-4">
-        <p className="text-gray-700">{review}</p>
-      </div>
-      <div className="mt-4">
-        <div className="flex items-center">
-          <span className="text-yellow-500 text-lg">
-            {"★".repeat(rating)}
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-};
+import { Button } from "../components/button";
+import ReviewsIcon from "../images/ReviewsIcon.svg";
+import StarRating from "../images/starfill.svg";
+import TestimonialCarousel from "../components/carousel";
+import useScrollReveal from "../components/SCROLL-REVEAL/ScrollReveal";
 
 const ReviewsSection = () => {
-  return (
-    <div className="bg-gray-200 pb-10">
-      <div className="bg-white w-full mb-12">
-      <div className="flex xl:flex-row sm:flex-col bg-white w-full text-center items-center justify-center reveal">
-    
-        <div className="w-full p-5">
-      <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600">
-        Reviews
-        </h1>
-        <h2 className="text-3xl font-bold text-almost-black">
-        What Are Our Customers Saying?
-        </h2>
-        <button className="mt-3 border-2 text-sky-600 px-4 py-2 rounded-lg hover:text-almost-white hover:bg-sky-500 transition duration-300">
-              Leave a Review
-            </button>
-        </div>
-  
-        <div className="relative w-full h-[600px]">
-  <img className="w-full h-full object-cover" src={Two}/>
-  <div
-            className="absolute inset-0 w-full h-full xl:bg-gradient-to-r sm:bg-gradient-to-b from-white/100 to-transparent"
-            style={{ zIndex: 5 }}
-          />
-</div>
-      </div>
-      </div>
 
-      <Wrapper>
-      <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {reviewsData.map((review, index) => (
-          <ReviewCard
+
+  useScrollReveal([
+    { selector: '.element-delay-200', delay: 200, options: { distance: '70px' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '70px' } },
+    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
+    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
+    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
+    { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px' } },
+    { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px' } },
+  ]);
+
+  const reviewLink = "https://g.page/r/CRMVNulv0FGUEBM/review";
+
+  return (
+    <div className="relative w-full bg-gray-900 overflow-hidden mb-10">
+      {/* Звезды на фоне */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(30)].map((_, index) => (
+          <div
             key={index}
-            name={review.name}
-            platform={review.platform}
-            review={review.review}
-            rating={review.rating}
-            img={review.img}
+            className="absolute w-2 h-2 bg-yellow-400 rounded-full opacity-75 animate-fall"
+            style={{
+              top: `${-Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDuration: `${Math.random() * 3 + 2}s`,
+              animationDelay: `${Math.random() * 5}s`,
+            }}
           />
         ))}
       </div>
-      </Wrapper>
+
+      <div className="container mx-auto flex flex-col xl:flex-row items-center justify-center relative z-10 p-6 xl:p-10">
+        {/* Левая часть: текст и кнопки */}
+        <div className="w-full xl:w-1/2 text-center p-5">
+        <div className="flex justify-center space-x-2 mb-4 element-delay-200">
+  {[...Array(5)].map((_, index) => (
+    <img
+      key={index}
+      className={`w-10 sm:w-8 transition-transform duration-300 ease-in-out transform animate-jump`}
+      style={{ animationDelay: `${index * 0.1}s` }} // Задержка для каждой звезды
+      src={StarRating}
+      alt={`Star Rating ${index + 1}`}
+    />
+  ))}
+</div>
+          <h1 className="text-4xl sm:text-3xl xl:text-5xl font-bold text-sky-500 element-delay-400">
+            Reviews
+          </h1>
+          <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white element-delay-800">
+            What Are Our Customers Saying?
+          </h2>
+          <div className="element-delay-1200">
+          <Button onClick={() => window.open(reviewLink, "_blank")} hasWhiteStyle={true}>Leave a Review</Button>
+          </div>
+        </div>
+
+        {/* Правая часть: изображение */}
+        <div className="w-1/2  element-delay-1400">
+          <img
+            className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-105"
+            src={ReviewsIcon}
+            alt="Happy Customer"
+          />
+        </div>
+      </div>
+
+
+      <div className="flex justify-center items-center element-delay-1400">
+  <div className="w-60 h-px bg-gray-600 opacity-50"></div>
+</div>
+
+
+
+      {/* Карусель отзывов */}
+      <div className=" element-delay-1600">
+      <TestimonialCarousel />
+      </div>
     </div>
   );
 };
 
 export default ReviewsSection;
+
 
 

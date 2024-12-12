@@ -30,7 +30,7 @@ function ServiceOrderFormShort() {
         onSubmit={handleSubmit}
         className="border-4 border-sky-700 p-6 rounded-lg space-y-4 w-full"
       >
-        <h1 className="text-5xl font-bold text-center mb-4 text-almost-black">Tech Troubles? <span className="text-sky-600">We're</span> Here to Help!</h1>
+        <h1 className="text-5xl font-bold text-center mb-4 text-almost-black">Tech Troubles? <span className="text-sky-500">We're</span> Here to Help!</h1>
 
 
         {/* Name */}
@@ -45,7 +45,7 @@ function ServiceOrderFormShort() {
               id="inputname"
               value={name} 
               onChange={(e) => setName(e.target.value)} // Обновляем состояние при вводе
-              className="block w-full border-2 rounded-md p-2 focus:text-sky-600 text-2xl"
+              className="block w-full border-2 rounded-md p-2 focus:text-sky-500 text-2xl"
               required // Делаем поле обязательным
             />
           </div>
@@ -62,7 +62,7 @@ function ServiceOrderFormShort() {
             name="textarea"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="w-full border-2 mt-1 p-2 border border-gray-300 rounded-lg"
+            className="w-full border-2 mt-1 p-2 border-gray-300 rounded-lg"
             rows="4"
             placeholder="Type something.."
           ></textarea>
@@ -84,7 +84,7 @@ function ServiceOrderFormShort() {
         after:opacity-0 peer-checked:after:opacity-100"
     ></span>
     <p className="inline-flex text-almost-black ml-4">
-      I agree to the&nbsp;<a className="text-sky-600 underline cursor-pointer">terms</a>&nbsp;of personal data processing
+      I agree to the&nbsp;<a className="text-sky-500 underline cursor-pointer">terms</a>&nbsp;of personal data processing
     </p>
   </label>
 </div>

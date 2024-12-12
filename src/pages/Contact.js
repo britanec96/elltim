@@ -1,94 +1,165 @@
-import React from 'react';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import ContactUs from '../../src/images/contact.jpg'; 
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import ContactUsIcon from "../images/ContactUsIcon.svg";
+import PhoneFill from "../images/phone-fill.svg";
 import { Wrapper } from '../components/wrapper'; 
-
-const center = {
-  lat: 53.4808,
-  lng: -2.2426,
-};
+import { Button } from '../components/button';
+import useScrollReveal from '../components/SCROLL-REVEAL/ScrollReveal';
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', comments: '' });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useScrollReveal([
+    { selector: '.element-delay-200', delay: 200, options: { distance: '70px' } },
+    { selector: '.element-delay-400', delay: 400, options: { distance: '70px' } },
+    { selector: '.element-delay-800', delay: 800, options: { distance: '70px' } },
+    { selector: '.element-delay-1200', delay: 1200, options: { distance: '70px' } },
+    { selector: '.element-delay-1400', delay: 1400, options: { distance: '70px' } },
+    { selector: '.element-delay-1600', delay: 1600, options: { distance: '70px' } },
+    { selector: '.element-delay-1800', delay: 1800, options: { distance: '70px' } },
+  ]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+    .send(
+      'service_lxxmm8s', 
+      'template_il5cfqr', 
+      formData,
+      'Df4zcv3Cqe2LtutdW' 
+    )
+    .then(
+      (response) => {
+        console.log('Message sent successfully:', response.status, response.text);
+        setIsSubmitted(true);
+        setTimeout(() => window.location.reload(), 3000); 
+      },
+      (error) => {
+        console.error('Error sending message:', error.text);
+      }
+    );
+};
+
   return (
-    <div className="bg-gray-200">
-      <div className="flex xl:flex-row md:flex-col sm:flex-col bg-white w-full text-center items-center justify-center reveal">
-        <div className="w-full p-5 relative">
-          <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-sky-600">
-            Work With Us
-          </h1>
-          <h2 className="text-3xl font-bold text-almost-black">
-            Some Extra Money, Why Not?
-          </h2>
+    <div className="my-10">
+      <div className="relative w-full mb-10 bg-gray-900 overflow-hidden">
+        <div className="container mx-auto flex flex-col xl:flex-row items-center justify-center relative z-10 p-6 xl:p-10">
+          {/* Левая часть: текст и кнопки */}
+          <div className="w-full xl:w-1/2 text-center p-5">
+            <div className="flex justify-center items-center element-delay-200">
+              <div className="relative">
+                <img
+                  src={PhoneFill}
+                  alt="Contact Us Icon"
+                  className="w-32 h-32 transition-transform duration-500 ease-in-out animate-shakeRotate hover:scale-110 hover:rotate-12 hover:animate-none"
+                />
+              </div>
+            </div>
+            <h1 className="text-4xl sm:text-3xl xl:text-5xl font-bold text-sky-500 element-delay-200">
+              Contact Us
+            </h1>
+            <h2 className="text-xl sm:text-lg xl:text-3xl m-5 font-bold text-almost-white element-delay-400">
+              Reach out if you're interested in partnering or joining our team
+            </h2>
+            <div className="element-delay-800">
+              <Link to="/about">
+                <Button hasWhiteStyle={true}>About Us</Button>
+              </Link>
+            </div>
+          </div>
+
+          {/* Правая часть: изображение */}
+          <div className="w-1/2 element-delay-1200">
+            <img
+              className="w-full h-auto transition-transform duration-300 ease-in-out transform hover:scale-105"
+              src={ContactUsIcon}
+              alt="Happy Customer"
+            />
+          </div>
         </div>
 
-        <div className="relative w-full h-[600px]">
-          <img className="w-full h-full object-cover" src={ContactUs} alt="Contact Us" />
-          <div
-            className="absolute inset-0 w-full h-full xl:bg-gradient-to-r sm:bg-gradient-to-b from-white/100 to-transparent"
-            style={{ zIndex: 5 }}
-          />
+        <div className="flex justify-center items-center mb-10 element-delay-1400">
+          <div className="w-60 h-px bg-gray-600 opacity-50"></div>
         </div>
       </div>
 
       <Wrapper>
-        <div className="grid gap-8 lg:grid-cols-2 md:grid-cols-1">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4">Cooperation</h2>
-            <p className="text-gray-600 mb-4">
+        <div className="grid gap-8 xl:grid-cols-2 sm:grid-cols-1">
+          <div className="bg-gray-900 p-8 rounded-lg shadow-lg element-delay-1400">
+            <h2 className="text-3xl text-almost-white font-semibold mb-4">Cooperation</h2>
+            <p className="text-gray-300 mb-4">
               If you want to work with us, we look forward to your message.
             </p>
-            <h3 className="text-xl font-semibold mb-2">Contact Information</h3>
-            <ul className="text-gray-600 mb-4">
-              <li>Email: example@example.com</li> {/* Добавьте email */}
-              <li>Phone: +44 123 456 7890</li> {/* Добавьте номер телефона */}
-              <li>Address: Manchester, UK</li>
+            <h3 className="text-3xl text-almost-white font-semibold mb-2">Contact Information</h3>
+            <ul className="text-gray-300 mb-4">
+              <li>Email: floxstreet@gmail.com</li>
+              <li>Phone: +44 737 87 16 579</li>
+              <li>Address: Salford, Greater Manchester, UK</li>
             </ul>
 
-            <h3 className="text-xl font-semibold mb-2">Write to Us</h3>
-            <form className="space-y-4">
+            <h3 className="text-2xl text-almost-white font-semibold mb-2">Write to Us</h3>
+            {!isSubmitted ? (
+              <form onSubmit={handleSubmit} className="space-y-4">
               <input
                 type="text"
+                name="name"
                 placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
                 className="w-full p-3 border rounded-lg"
                 required
               />
               <input
                 type="email"
+                name="email"
                 placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
                 className="w-full p-3 border rounded-lg"
                 required
               />
               <textarea
                 rows="4"
+                name="comments" // Изменено здесь
                 placeholder="Your Message"
+                value={formData.comments} // Изменено здесь
+                onChange={handleChange}
                 className="w-full p-3 border rounded-lg"
                 required
               />
-              <button
-                type="submit"
-                className="w-56 h-16 border-2 text-sky-600 p-3 rounded-lg font-medium text-xl hover:text-almost-white hover:bg-sky-500 transition-colors duration-200"
-              >
-                Send Message
-              </button>
+              <Button hasWhiteStyle={true} type="submit">Send Message</Button>
             </form>
+            
+            ) : (
+              <p className="text-green-500">Your message has been sent! We will contact you soon.</p>
+            )}
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h2 className="text-2xl font-semibold mb-4">Our Location</h2>
-            <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
-   
-      <GoogleMap
-        mapContainerStyle={{
-          height: "400px",
-          width: "100%",
-        }}
-        center={center}
-        zoom={14}
-        options={{ mapId: 'DEMO_MAP_ID' }}
-      >
-        <Marker position={center} title="My location" />
-      </GoogleMap>
-    </LoadScript>
+          <div className="bg-gray-900 p-8 rounded-lg shadow-lg element-delay-1600">
+            <h2 className="text-2xl text-almost-white font-semibold mb-4">Our Location</h2>
+            <div
+              style={{
+                height: '400px',
+                width: '100%',
+                backgroundImage: 'url("https://i.pinimg.com/originals/c1/60/ea/c160ea798d52b5791e1f5f80bbb6f6e4.png")',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                borderRadius: '8px',
+              }}
+              className="relative"
+            >
+              <p className="absolute bottom-2 right-2 bg-gray-800 bg-opacity-75 text-sm text-almost-white px-2 py-1 rounded">
+                We Are Based in Manchester
+              </p>
+            </div>
           </div>
         </div>
       </Wrapper>
@@ -97,3 +168,8 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
+
+
